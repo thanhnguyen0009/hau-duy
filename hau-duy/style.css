@@ -926,6 +926,7 @@ form{
   font-family: var(--font-monster);
   font-size: 1.2em;
   font-weight: bolder;
+  color: #fff;
   -webkit-text-stroke: 1px #fff;
   margin-bottom: 20px;
   letter-spacing: 2px;
@@ -1409,6 +1410,7 @@ form{
   font-weight: bolder;
   line-height: 15px;
   letter-spacing: .5px;
+  text-align: justify;
 }
 
 .box-loichuc{
@@ -1596,26 +1598,85 @@ input::placeholder{
     .container {
         width: 100%;
     }
-    .box-image{
-        margin-left: -15px;
-        
-    }
-    .imge{
-        width: 40%;
-    }
     .in-fe{
-        font-size: .5em;
-    }
-    .lb-line1, .lb-name{
-        font-size: 2.7em;
-    }
-    .kinhmoi{
-        font-size: .6em;
+        font-size: .4em;
     }
     textarea {
         width: 90%;
         padding: 10px;
         font-size: .75em;
+    }
+    .lb-info4{
+      font-size: .3em;
+      text-align: center;
+    }
+
+    .img-timeline2{
+      margin-top: -130px;
+    }
+    .p-info2{
+      font-size: .35em;
+    }
+    .p-story1, .p-story2{
+      padding: 0 20px;
+      font-size: .4em;
+    }
+    .grid-container{
+      padding: 0 20px;
+    }
+    .p-grid1{
+      padding: 0 10px 0 20px;
+    }
+    .p-story3, .p-story4{
+      padding: 0 20px;
+    }
+    .xacnhan-ten{
+      padding: 0 30px 0 80px;
+    }
+    .lb-xacnhan1{
+      font-size: .9em;
+      -webkit-text-stroke: .5px;
+    }
+    input::placeholder{
+      font-size: .7em;
+    }
+    .lb-xacnhan2{
+      -webkit-text-stroke: .5px #fff;
+    }
+    .p-xacnhan1{
+      font-size: .4em;
+      text-align: justify;
+    }
+    .p-xacnhan2, .p-xacnhan3{
+      font-size: .4em;
+      line-height: 13px;
+    }
+    .text{
+      font-size: .35em;
+    }
+    .img-rsvp4{
+      margin-top: 50px;
+    }
+    .img-note{
+      margin-top: 30px;
+    }
+    .makeup-list{
+      padding-left: 70px;
+    }
+    .p-xacnhan8{
+      padding: 0 20px;
+      font-size: .4em;
+      line-height: 13px;
+    }
+    .gift{
+      padding: 0 20px;
+    }
+    .lb-gift1{
+      font-size: .4em;
+      line-height: 13px;
+    }
+    .p-gift{
+      font-size: 5px;
     }
   }
   
