@@ -1032,6 +1032,7 @@ form{
 .schedule-item {
     display: flex;
     align-items: center;
+    justify-content: end;
     width: 100%;
     margin-bottom: 10px;
     box-sizing: border-box; /* Ensures total width includes padding and borders */
@@ -1039,8 +1040,8 @@ form{
 .bullet {
     height: 2px;
     background: #B3B395;
-    flex-grow: 1; /* Grow to fill available space */
-    min-width: 50px; /* Minimum length to ensure visibility */
+    flex-grow: .5; /* Grow to fill available space */
+    min-width: 20px; /* Minimum length to ensure visibility */
     margin-right: 10px;
     height: 7px;
 }
@@ -1608,19 +1609,32 @@ input::placeholder{
         font-size: .75em;
     }
     .lb-info4{
-      font-size: .2em;
+      font-size: 6px;
+      letter-spacing: .1px;
       text-align: center;
     }
 
     .img-timeline2{
       margin-top: -140px;
     }
+    .dress{
+      padding-right: 5px;
+    }
+    .p-info{
+      text-align: center;
+      font-size: 8px;
+      letter-spacing: 0;
+    }
     .p-info2{
-      font-size: .2em;
+      font-size: 6px;
+      letter-spacing: .2px;
+      word-spacing: 0;
+      font-weight: normal;
     }
     .p-story1, .p-story2{
       padding: 0 20px;
-      font-size: .3em;
+      font-size: 8px;
+      font-weight: normal;
       line-height: 13px;
       letter-spacing: .1px;
     }
@@ -1630,16 +1644,18 @@ input::placeholder{
     .p-grid1{
       padding: 0 10px 0 20px;
       letter-spacing: .1px;
-      font-size: .4em;
+      font-size: 8px;
+      font-weight: normal;
     }
     .p-grid2{
       letter-spacing: .1px;
-      font-size: .4em;
+      font-size: 8px;
+      font-weight: normal;
     }
     .p-story3, .p-story4{
       padding: 0 20px;
       letter-spacing: .1px;
-      font-size: .4em;
+      font-size: 8px;
     }
     .xacnhan-ten{
       padding: 0 30px 0 80px;
@@ -1658,21 +1674,22 @@ input::placeholder{
       letter-spacing: .2px;
     }
     .p-xacnhan1{
-      font-size: .4em;
+      font-size: 8px;
       text-align: justify;
-      letter-spacing: .1px;
+      letter-spacing: 0;
     }
     .p-xacnhan2, .p-xacnhan3{
-      font-size: .4em;
+      font-size: 7px;
       line-height: 13px;
-      letter-spacing: .2px;
+      letter-spacing: .1px;
+      font-weight: bold;
     }
     .p-xacnhan4{
       letter-spacing: .2px;
       font-size: .3em;
     }
     .text{
-      font-size: .3em;
+      font-size: 7px;
       letter-spacing: .2px;
     }
     .bullet{
@@ -1681,6 +1698,14 @@ input::placeholder{
     .luuy{
       letter-spacing: .2px;
       font-size: .3em;
+    }
+    .xacnhan-dichuyen{
+      padding: 30px 10px;
+    }
+    .til-check-dichuyen{
+      font-size: 7px;
+      letter-spacing: 0;
+    
     }
     .p-xacnhan5{
       letter-spacing: .2px;
@@ -1693,15 +1718,16 @@ input::placeholder{
       margin-top: 30px;
     }
     .makeup-list{
-      padding-left: 70px;
+      padding-left: 10px;
     }
     .makeup-text{
-      letter-spacing: .2px;
-      font-size: .3em;
+      letter-spacing: 0;
+      font-size: 7px;
+      font-weight: bold;
     }
     .p-xacnhan6, .p-xacnhan7{
       letter-spacing: .2px;
-      font-size: .3em;
+      font-size: 7px;
     }
     .lb-xacnhan7{
       font-size: 1em;
@@ -1709,20 +1735,22 @@ input::placeholder{
     }
     .p-xacnhan8{
       padding: 0 20px;
-      font-size: .4em;
+      font-size: 7px;
+      letter-spacing: .1px;
       line-height: 13px;
     }
     .gift{
       padding: 0 20px;
     }
     .lb-gift1{
-      font-size: .3em;
+      font-size: 6px;
       line-height: 13px;
       letter-spacing: .2px;
     }
     .p-gift{
-      font-size: 5px;
+      font-size: 6px;
       letter-spacing: 0;
+      font-weight: normal;
     }
   }
   
