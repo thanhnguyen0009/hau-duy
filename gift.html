@@ -105,29 +105,29 @@
 document.addEventListener("DOMContentLoaded", function () {
     const musicCircle = document.getElementById("musicCircle");
     const audio = document.getElementById("audio");
+    const clickMeLabel = document.querySelector(".lb-circle");
 
     // Load saved audio state from sessionStorage
     const isPlaying = sessionStorage.getItem("musicPlaying") === "true";
     const savedTime = parseFloat(sessionStorage.getItem("musicCurrentTime")) || 0;
 
     // Initialize audio state
-    if (savedTime) {
-        audio.currentTime = savedTime; // Restore playback position
-    }
+    audio.currentTime = savedTime; // Restore playback position
 
     if (isPlaying) {
         audio.play().then(() => {
-            musicCircle.classList.add("spin"); // Resume spinning animation
+            musicCircle.classList.add("spin");
+            if (clickMeLabel) clickMeLabel.style.display = "none";
         }).catch(error => {
             console.error("Audio playback failed:", error);
-            // Display the "Click Me" label if playback fails
-            document.querySelector(".lb-circle").style.display = "block";
+            if (clickMeLabel) clickMeLabel.style.display = "block";
         });
     } else {
-        musicCircle.classList.remove("spin"); // Ensure no spinning if paused
+        musicCircle.classList.remove("spin");
+        if (clickMeLabel) clickMeLabel.style.display = "block";
     }
 
-    // Toggle music playback on click
+    // Toggle music playback on single click
     musicCircle.addEventListener("click", toggleMusic);
 
     function toggleMusic() {
@@ -135,13 +135,16 @@ document.addEventListener("DOMContentLoaded", function () {
             audio.play().then(() => {
                 musicCircle.classList.add("spin");
                 sessionStorage.setItem("musicPlaying", "true");
+                if (clickMeLabel) clickMeLabel.style.display = "none";
             }).catch(error => {
                 console.error("Audio playback failed:", error);
+                if (clickMeLabel) clickMeLabel.style.display = "block";
             });
         } else {
             audio.pause();
             musicCircle.classList.remove("spin");
             sessionStorage.setItem("musicPlaying", "false");
+            if (clickMeLabel) clickMeLabel.style.display = "block";
         }
         // Save current playback time
         sessionStorage.setItem("musicCurrentTime", audio.currentTime);
@@ -155,10 +158,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Update playback state on pause/play
     audio.addEventListener("play", () => {
         sessionStorage.setItem("musicPlaying", "true");
+        if (clickMeLabel) clickMeLabel.style.display = "none";
     });
 
     audio.addEventListener("pause", () => {
         sessionStorage.setItem("musicPlaying", "false");
+        if (clickMeLabel) clickMeLabel.style.display = "block";
     });
 
     // Handle YouTube video conflicts (if present)
@@ -179,6 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     musicCircle.classList.remove("spin");
                     sessionStorage.setItem("musicPlaying", "false");
                     sessionStorage.setItem("musicCurrentTime", audio.currentTime);
+                    if (clickMeLabel) clickMeLabel.style.display = "block";
                 }
             }
         }
@@ -195,6 +201,54 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 </script> 
+   <script>
+const musicCircle = document.getElementById("musicCircle");
+const audio = document.getElementById("audio");
+const videoIframe = document.getElementById("video");
+
+// Thêm sự kiện khi nhấn vào vòng tròn
+musicCircle.addEventListener("click", toggleMusic);
+
+// Hàm điều khiển việc phát hoặc tạm dừng nhạc
+function toggleMusic() {
+    if (audio.paused) {
+        audio.play(); // Phát nhạc
+        musicCircle.classList.add("spin"); // Bắt đầu xoay
+    } else {
+        audio.pause(); // Dừng nhạc
+        musicCircle.classList.remove("spin"); // Dừng xoay
+    }
+}
+
+// Tạo đối tượng YouTube Player API
+let player;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('video', {
+        events: {
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+// Lắng nghe sự kiện trạng thái của video
+function onPlayerStateChange(event) {
+    // Khi video bắt đầu phát (state = 1), dừng nhạc và dừng xoay vòng tròn
+    if (event.data === YT.PlayerState.PLAYING) {
+        if (!audio.paused) {
+            audio.pause(); // Dừng nhạc
+            musicCircle.classList.remove("spin"); // Dừng xoay vòng tròn
+        }
+    }
+}
+
+// Tải API YouTube
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+</script>
 <script src="./hau-duy/script.js"></script>
 </body>
 </html>
