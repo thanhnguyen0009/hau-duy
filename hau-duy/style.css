@@ -212,7 +212,12 @@
     width: 100%;
 }
 
-
+#info, #story, #photo, #rsvp, #gift{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 
 #backToTop {
@@ -1551,7 +1556,7 @@ input::placeholder{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     overflow: hidden; /* Đảm bảo hình ảnh không bị tràn ra ngoài */
     transition: transform 0.5s ease; /* Chuyển động mượt mà */
     z-index: 2;
@@ -1571,11 +1576,11 @@ input::placeholder{
   }
   
   /* Hiệu ứng xoay liên tục */
-  .circle.spin {
-    animation: spin 1s linear infinite; /* Xoay liên tục */
+  /* .circle.spin {
+    animation: spin 1s linear infinite;
   }
   
-  /* Định nghĩa hoạt ảnh xoay */
+
   @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -1583,7 +1588,7 @@ input::placeholder{
     100% {
       transform: rotate(360deg);
     }
-  }
+  } */
   
   .box-back{
     background-image: url('../chien-diem/fonts/./anh/back-02.png');
