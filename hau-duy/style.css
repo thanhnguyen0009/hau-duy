@@ -161,7 +161,7 @@
 }
 
 .custom-popup {
-	font-family: var(--font-lora);
+	font-family: var(--font-monster);
 }
 
 .custom-title {
@@ -747,6 +747,78 @@ li.active::after {
     z-index: 1;
 }
 
+
+
+
+/* SLIDER */
+.slider {
+            width: 100%;
+            max-width: 800px;
+            height: 700px;
+            position: relative;
+            overflow: hidden; /* Ẩn phần ảnh vượt ngoài slider */
+            border-radius: 15px;
+            margin: 50px auto 0; /* Căn giữa và thêm margin-top */
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: all 0.5s;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Đảm bảo ảnh vừa với 2 bên khung */
+            object-position: center; /* Căn giữa ảnh */
+            display: block;
+        }
+
+        /* Nút điều hướng */
+        .btn {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+            border: none;
+            border-radius: 50%;
+            z-index: 10;
+            cursor: pointer;
+            background-color: #fff;
+            font-size: 18px;
+            color: #111;
+        }
+
+        .btn:active {
+            transform: scale(1.1);
+        }
+
+        .btn-prev {
+            top: 45%;
+            left: 2%;
+        }
+
+        .btn-next {
+            top: 45%;
+            right: 2%;
+        }
+
+        @media (max-width: 768px) {
+            .slider {
+                height: 400px; /* Giảm chiều cao trên thiết bị nhỏ */
+            }
+        }
+ 
+
+
+.img-flow3{
+    width: 30%;
+    margin: 50px 0 20px;
+}
+
+
 /* =========================GIFT============================= */ 
 
 .box-gift{
@@ -1078,6 +1150,7 @@ form{
   text-align: right;
 }
 
+
 .box-dichuyen{
    display: flex;
    width: 100%;
@@ -1097,7 +1170,7 @@ form{
 .img-rsvp4{
   width: 70%;
 }
-
+/* Container styling */
 .container-check-dichuyen {
     margin-top: 20px;
     display: flex;
@@ -1106,45 +1179,59 @@ form{
     align-items: center;
     font-family: var(--font-lora);
     font-weight: 300;
-    }
- .check-box-dichuyen {
-  width: 100%;
-  text-align: center;
-  display: inline-block;
-  padding: 5px 10px;
-  margin: 5px 20px;
-  border-radius: 20px;
-  font-style: normal;
-  background-color: #9D9D7E;
-  color: #fff;
-  font-family: var(--font-monster);
-  font-size: .35em;
-  letter-spacing: 1px;
-  text-transform: uppercase;
 }
+
+/* Hide the checkbox inputs */
+.box-feed-dichuyen {
+    display: none;
+}
+
+/* Label styling to mimic radio buttons */
+.check-box-dichuyen {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px 20px;
+    border-radius: 20px;
+    font-style: normal;
+    background-color: #9D9D7E;
+    color: #fff;
+    font-family: var(--font-monster);
+    font-size: .35em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* Hover effect for labels */
 .check-box-dichuyen:hover {
     background-color: var(--primary-color);
-} 
-
-
-/* .til-check-thamgia{
-  font-family: var(--font-monster);
-  font-weight: bold;
-  font-size: .45em;
-  color: #111;
-  letter-spacing: 1px;
-  } */
-  
-.box-feed-dichuyen:checked+label {
-  background-color: var(--primary-color);
-  color: #fff;
-    }
-    
-.box-feed-dichuyen{
-  border-radius: 20px;
-  width: 100px;
 }
 
+/* Styling for checked labels */
+.box-feed-dichuyen:checked + .check-box-dichuyen {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Styling for the selected options display */
+#selected-options {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-family: var(--font-lora);
+    text-align: center;
+}
+
+/* Styling for each selected item */
+#selected-options p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
 
 .xacnhan-antrua{
   display: flex;
@@ -1176,6 +1263,11 @@ form{
   color: #fff;
 }
 
+.box-menu{
+  display: flex;
+  justify-content: space-between;
+}
+
 .btn-xacnhan{
   background-color: #fff;
   color: var(--primary-color);
@@ -1187,6 +1279,7 @@ form{
   border-radius: 20px;
   opacity: 0.8;
   margin-top: 30px;
+  margin-left: 10px;
 }
 
 .btn-xacnhan:hover {
@@ -1626,20 +1719,20 @@ input::placeholder{
       padding-right: 5px;
     }
     .p-info{
-      text-align: center;
-      font-size: 8px;
+      text-align: justify;
+      font-size: .6em;
       letter-spacing: 0;
     }
     .p-info2{
-      font-size: 6px;
-      letter-spacing: .2px;
+      font-size: .4em;
+      letter-spacing: .1px;
       word-spacing: 0;
-      font-weight: normal;
+      font-weight: bold;
     }
     .p-story1, .p-story2{
       padding: 0 20px;
-      font-size: 8px;
-      font-weight: normal;
+      font-size: .6em;
+      font-weight: bold;
       line-height: 13px;
       letter-spacing: .1px;
     }
@@ -1649,15 +1742,16 @@ input::placeholder{
     .p-grid1{
       padding: 0 10px 0 20px;
       letter-spacing: .1px;
-      font-size: 8px;
-      font-weight: normal;
+      font-size: .6em;
+      font-weight: bold;
     }
     .p-grid2{
       letter-spacing: .1px;
-      font-size: 8px;
-      font-weight: normal;
+      font-size: .5em;
+      font-weight: bold;
     }
     .p-story3, .p-story4{
+      font-size: .6em;
       padding: 0 20px;
       letter-spacing: .1px;
       font-size: 8px;
@@ -1684,17 +1778,18 @@ input::placeholder{
       letter-spacing: 0;
     }
     .p-xacnhan2, .p-xacnhan3{
-      font-size: 7px;
+      font-size: .5em;
       line-height: 13px;
       letter-spacing: .1px;
       font-weight: bold;
     }
     .p-xacnhan4{
       letter-spacing: .2px;
-      font-size: .3em;
+      font-size: .5em;
+      font-weight: bold;
     }
     .text{
-      font-size: 7px;
+      font-size: .5em;
       letter-spacing: .2px;
     }
     .bullet{
@@ -1702,7 +1797,8 @@ input::placeholder{
     }
     .luuy{
       letter-spacing: .2px;
-      font-size: .3em;
+      font-size: .4em;
+      font-weight: bold;
     }
     .xacnhan-dichuyen{
       padding: 30px 10px;
@@ -1725,14 +1821,17 @@ input::placeholder{
     .makeup-list{
       padding-left: 10px;
     }
+    .lb-makeup{
+      font-size: .5em;
+    }
     .makeup-text{
       letter-spacing: 0;
-      font-size: 7px;
+      font-size: .5em;
       font-weight: bold;
     }
     .p-xacnhan6, .p-xacnhan7{
       letter-spacing: .2px;
-      font-size: 7px;
+      font-size: .5em;
     }
     .lb-xacnhan7{
       font-size: 1em;
@@ -1740,7 +1839,7 @@ input::placeholder{
     }
     .p-xacnhan8{
       padding: 0 20px;
-      font-size: 7px;
+      font-size: .5em;
       letter-spacing: .1px;
       line-height: 13px;
     }
