@@ -1519,7 +1519,7 @@ input::placeholder{
 /* Đảm bảo box-circle luôn cố định và không ảnh hưởng đến nội dung trang */
 .box-circle {
     position: fixed; /* Đảm bảo box-circle luôn cố định trên màn hình */
-    bottom: 20px; /* Đẩy box-circle xuống một chút từ trên cùng */
+    top: 20px; /* Đẩy box-circle xuống một chút từ trên cùng */
     right: 20px; /* Căn box-circle về phía bên phải */
     z-index: 9999; /* Đảm bảo box-circle nằm trên các phần tử khác */
     display: flex;
