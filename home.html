@@ -653,8 +653,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize on page load and scroll to #rsvp if no hash
     window.addEventListener('load', () => {
         if (!window.location.hash) {
-            window.location.hash = '#rsvp';
-            const targetElement = document.getElementById('rsvp');
+            window.location.hash = '#home';
+            const targetElement = document.getElementById('home');
             if (targetElement) {
                 targetElement.scrollIntoView({ behavior: 'smooth' });
             }
