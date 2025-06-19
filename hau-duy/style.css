@@ -271,6 +271,11 @@
     margin-top: 30px;
 }
 
+.img-name1{
+  width: 50%;
+  margin-top: 30px;
+}
+
 .lb-logo-name{
     font-family: var(--font-ring);
     font-size: 1.3em;
@@ -291,7 +296,7 @@ ul {
     gap: 13px; /* Khoảng cách giữa các mục menu */
     justify-content: center; /* Căn giữa menu */
     align-items: center;
-    margin: 20px 0; /* Khoảng cách trên dưới */
+    margin: 40px 0 30px; /* Khoảng cách trên dưới */
 }
 
 li {
@@ -355,11 +360,16 @@ li.active::after {
   /* align-items: center; */
   justify-content: space-around;
   gap: 120px;
-  margin: 20px 0 30px;
+  margin: 30px 0 20px;
+  padding: 0 10px;
 }
 
 .img-logo{
-  width: 30%;
+  width: 35%;
+}
+
+.img-logo2{
+  width: 100%;
 }
 
 .box-name-navbar{
@@ -368,7 +378,6 @@ li.active::after {
   align-items: flex-end;
   justify-content: flex-end;
   font-family: var(--font-ring);
-  border-bottom: 3px solid var(--primary-color);
   padding-bottom: -10px;
 }
 
@@ -946,6 +955,7 @@ form{
   font-family: var(--font-monster);
   font-size: 1.2em;
   font-weight: bolder;
+  text-transform: uppercase;
   -webkit-text-stroke: 1px var(--primary-color);
   text-align: right;
   letter-spacing: .5px;
@@ -1713,7 +1723,7 @@ input::placeholder{
     }
 
     .img-timeline2{
-      margin-top: -140px;
+      margin-top: -160px;
     }
     .dress{
       padding-right: 5px;
@@ -1721,7 +1731,7 @@ input::placeholder{
     .p-info{
       text-align: justify;
       font-size: .6em;
-      letter-spacing: 0;
+      letter-spacing: .2px;
     }
     .p-info2{
       font-size: .4em;
@@ -1731,7 +1741,7 @@ input::placeholder{
     }
     .p-story1, .p-story2{
       padding: 0 20px;
-      font-size: .6em;
+      font-size: .5em;
       font-weight: bold;
       line-height: 13px;
       letter-spacing: .1px;
@@ -1742,25 +1752,24 @@ input::placeholder{
     .p-grid1{
       padding: 0 10px 0 20px;
       letter-spacing: .1px;
-      font-size: .6em;
+      font-size: 1em;
       font-weight: bold;
     }
     .p-grid2{
       letter-spacing: .1px;
-      font-size: .5em;
+      font-size: 1em;
       font-weight: bold;
     }
     .p-story3, .p-story4{
-      font-size: .6em;
+      font-size: .5em;
       padding: 0 20px;
       letter-spacing: .1px;
-      font-size: 8px;
     }
     .xacnhan-ten{
       padding: 0 30px 0 80px;
     }
     .lb-xacnhan1{
-      font-size: .9em;
+      font-size: .8em;
       -webkit-text-stroke: .5px;
     }
     input::placeholder{
