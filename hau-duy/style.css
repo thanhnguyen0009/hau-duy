@@ -1719,7 +1719,7 @@ input::placeholder{
     }
     .p-info2{
       font-size: .4em;
-      letter-spacing: .1px;
+      letter-spacing: 0;
       word-spacing: 0;
       font-weight: bold;
     }
