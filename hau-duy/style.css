@@ -354,6 +354,38 @@ li.active::after {
 }
 
 /* =========================INFO============================= */
+.box-navbar{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin-top: 20px;
+}
+
+.img-nav1, .img-nav2{
+  width: 40%;
+}
+
+.box-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-title{
+  width: 20%;
+  margin-top: 40px;
+}
+
+.lb-title{
+  font-family: var(--font-icel);
+  font-size: 1.5em;
+  margin: 40px 0 20px;
+}
+
 .navbar-menu{
   display: flex;
   /* align-items: center; */
@@ -717,108 +749,56 @@ li.active::after {
             cursor: pointer; /* Indicate image is clickable */
         }
 
-        /* Modal styles */
+         /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
-            left: 0;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
+            z-index: 1000;
         }
 
         .modal-content {
             max-width: 90%;
-            max-height: 90vh;
-            width: auto;
-            height: auto;
-            display: block;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        .close, .prev, .next {
+            position: absolute;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            user-select: none;
         }
 
         .close {
-            position: absolute;
-            top: 20px;
+            top: 70px;
             right: 30px;
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
         }
 
+        .prev {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .next {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 .img-photo{
     width: 100%;
     margin-top: -30 0px;
     z-index: 1;
 }
 
-
-
-
-/* SLIDER */
-.slider {
-            width: 100%;
-            max-width: 800px;
-            height: 700px;
-            position: relative;
-            overflow: hidden; /* Ẩn phần ảnh vượt ngoài slider */
-            border-radius: 15px;
-            margin: 50px auto 0; /* Căn giữa và thêm margin-top */
-        }
-
-        .slide {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            transition: all 0.5s;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Đảm bảo ảnh vừa với 2 bên khung */
-            object-position: center; /* Căn giữa ảnh */
-            display: block;
-        }
-
-        /* Nút điều hướng */
-        .btn {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            padding: 10px;
-            border: none;
-            border-radius: 50%;
-            z-index: 10;
-            cursor: pointer;
-            background-color: #fff;
-            font-size: 18px;
-            color: #111;
-        }
-
-        .btn:active {
-            transform: scale(1.1);
-        }
-
-        .btn-prev {
-            top: 45%;
-            left: 2%;
-        }
-
-        .btn-next {
-            top: 45%;
-            right: 2%;
-        }
-
-        @media (max-width: 768px) {
-            .slider {
-                height: 400px; /* Giảm chiều cao trên thiết bị nhỏ */
-            }
-        }
- 
 
 
 .img-flow3{
@@ -921,7 +901,7 @@ form{
 
 .lb-form1{
     font-family: var(--font-icel);
-    font-size: 2.3em;
+    font-size: 1.5em;
     margin-top: 20px;
 }
 .lb-dot{
@@ -1174,6 +1154,11 @@ form{
 .grid-xacnhan2{
   flex: 4;
   width: 100%;
+}
+
+.img-rsvp1{
+  width: 10%;
+  margin-top: 40px;
 }
 
 .img-rsvp4{
