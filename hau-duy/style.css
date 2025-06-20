@@ -205,6 +205,7 @@
     margin: 0 auto;
     overflow: hidden;
     border: 1px solid #111;
+    background: #FAF7EE;
     color: var(--primary-color);
 }
 
@@ -611,7 +612,7 @@ li.active::after {
 }
 
 .lb-story1{
-  font-size: .4em;
+  font-size: .2em;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
@@ -1725,7 +1726,7 @@ input::placeholder{
     }
     .p-story1, .p-story2{
       padding: 0 20px;
-      font-size: .5em;
+      font-size: .em;
       font-weight: bold;
       line-height: 13px;
       letter-spacing: .1px;
